@@ -1,18 +1,16 @@
-<h1 align="center">Playwrighterastourts</h1>
+<h3 align="center"> 🚀 Automation tests for The Eras Tour website with Playwright and Typescript </h1>
 
- Status 
 
  <h4 align="center"> 
-	🚧  Automation tests for The Eras Tour website with Playwright and Typescript 
-  🚀 Under construction...  🚧
+  🚧 Under construction...  🚧
 </h4> 
 
 ## :dart: About ##
 
 I started this project to practice my Playwright skills and I chose this website to automate because I is in English and also fun. 
-Also I liked the correlation between Typescript --> TS and Taylor Swift --> TS :smile_cat
+Also I liked the correlation between Typescript --> TS and Taylor Swift --> TS 😸
 
-I hope you like it :heart_hands
+I hope you like it 🫶
 
 <!-- ## :sparkles: Features ##
 
