@@ -7,8 +7,12 @@
 
 ## :dart: About ##
 
-I started this project to practice my Playwright skills and I chose this website to automate because I is in English and also fun. 
-Also I liked the correlation between Typescript --> TS and Taylor Swift --> TS 😸
+I started this project to practice my Playwright skills.\
+I chose this website to automate because:
+- It is real, not a demo or specifically created to learn.
+- It is in English.
+- Simple but also fun.
+- I liked the correlation between Typescript --> TS and Taylor Swift --> TS 😸
 
 I hope you like it 🫶
 
