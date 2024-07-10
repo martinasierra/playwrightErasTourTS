@@ -51,9 +51,8 @@ test('Shoud go to Tour website', async ({ page, context }) => {
 test('Shoud go to Tour page', async ({ page }) => {
     const tourPage = new TourPage(page); 
     await page.mouse.wheel(0, 2480);
-    await expect(homePage.tourButton).toHaveClass('Desktop_activeLink__Q9Ulg');
     await expect(tourPage.tourHeading).toBeInViewport();
-
+    await expect(homePage.tourButton).toHaveClass('Desktop_activeLink__Q9Ulg');
 });
 
 test('Should go to Playlist page', async ({ page }) => {
