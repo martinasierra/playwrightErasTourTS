@@ -1,6 +1,6 @@
 
 /*  DRAFT !!!!!!!!!!
-  await page.getByRole('button', { name: 'Playlist' }).click();
+  getByRole('heading', { name: 'Create a Taylor Swift | The' })
   await expect(page.locator('body')).toContainText('Playlist Creator');
   const page3Promise = page.waitForEvent('popup');
   await page.getByRole('button', { name: 'Film' }).click();

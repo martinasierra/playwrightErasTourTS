@@ -16,15 +16,17 @@ readonly erasImagesContainer: Locator;
 readonly merchButton: Locator;
 readonly exploreButton: Locator;
 readonly tourButton: Locator;
+readonly playlistButton: Locator;
 
 // constructor
 constructor (page:Page) {
     this.page = page;
-    this.desktopLogo = page.getByRole('banner').getByRole('img', { name: 'Taylor Swift Logo' })
+    this.desktopLogo = page.getByRole('banner').getByRole('img', { name: 'Taylor Swift Logo' });
     this.erasImagesContainer = page.locator('.Hero_container__IcDcp');
     this.merchButton = page.getByRole('button', { name: 'Merch' });
     this.exploreButton = page.getByRole('button', { name: 'Explore' });
     this.tourButton = page.getByRole('button', { name: 'Tour' });
+    this.playlistButton = page.getByRole('button', { name: 'Playlist' });
 }
 
 // methods (or functions)
@@ -38,6 +40,10 @@ async clickExploreButton(){
 
 async clickTourButton(){
     await this.tourButton.click();
+};
+
+async clickPlaylistButton(){
+    await this.playlistButton.click();
 };
     
 }  

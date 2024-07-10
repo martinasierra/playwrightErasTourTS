@@ -13,12 +13,6 @@ constructor (page:Page) {
 
 }
 
-
-// methods (or functions)
-
-//async clickExploreButton(){
-  //  await this.exploreButton.click();
-//}
     
 }  
 
