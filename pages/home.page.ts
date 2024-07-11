@@ -17,6 +17,7 @@ readonly merchButton: Locator;
 readonly exploreButton: Locator;
 readonly tourButton: Locator;
 readonly playlistButton: Locator;
+readonly filmButton: Locator;
 
 // constructor
 constructor (page:Page) {
@@ -27,6 +28,7 @@ constructor (page:Page) {
     this.exploreButton = page.getByRole('button', { name: 'Explore' });
     this.tourButton = page.getByRole('button', { name: 'Tour' });
     this.playlistButton = page.getByRole('button', { name: 'Playlist' });
+    this.filmButton = page.getByRole('button', { name: 'Film' });
 }
 
 // methods (or functions)
@@ -44,6 +46,10 @@ async clickTourButton(){
 
 async clickPlaylistButton(){
     await this.playlistButton.click();
+};
+
+async clickFilmButton(){
+    await this.filmButton.click();
 };
     
 }  

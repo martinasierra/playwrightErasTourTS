@@ -38,13 +38,9 @@ test('Shoud go to Tour website', async ({ page, context }) => {
         context.waitForEvent('page'), 
         await homePage.clickTourButton()
     ]);
-    // This action triggers the new tab page. locator('text=About').click() - 209ms
     // Wait for Page Load
     await newPage.waitForLoadState();
-    // title of new tab page
-    console.log('URLllllllllll', newPage.url());
-    // title of existing page
-   // console.log(await page.title());
+    console.log('URL', newPage.url());
    await (newPage).close();
 });
 
@@ -61,5 +57,15 @@ test('Should go to Playlist page', async ({ page }) => {
    await expect(playlistPage.playlistHeading).toBeInViewport(); 
 });
 
+test('Shoud go to Film website', async ({ page, context }) => {
+    const [newPage2] = await Promise.all([ 
+        context.waitForEvent('page'), 
+        await homePage.clickFilmButton()
+    ]);
+    await newPage2.waitForLoadState();
+    console.log('URL', newPage2.url());
+   await (newPage2).close();
+
+});
 
 });
