@@ -18,6 +18,7 @@ readonly exploreButton: Locator;
 readonly tourButton: Locator;
 readonly playlistButton: Locator;
 readonly filmButton: Locator;
+readonly colorScheme1989: Locator;
 
 // constructor
 constructor (page:Page) {
@@ -29,6 +30,7 @@ constructor (page:Page) {
     this.tourButton = page.getByRole('button', { name: 'Tour' });
     this.playlistButton = page.getByRole('button', { name: 'Playlist' });
     this.filmButton = page.getByRole('button', { name: 'Film' });
+    this.colorScheme1989 = page.getByLabel('Use 1989 color scheme');
 }
 
 // methods (or functions)
@@ -51,6 +53,10 @@ async clickPlaylistButton(){
 async clickFilmButton(){
     await this.filmButton.click();
 };
+
+async useColorScheme1989(){
+    await this.colorScheme1989.click();
+}
     
 }  
 

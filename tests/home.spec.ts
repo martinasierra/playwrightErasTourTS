@@ -14,7 +14,7 @@ test.beforeEach(async ({page}) => {
     await page.goto(URL);
 })
 
-test.describe('Home Page', () => {
+test.describe('Home Page - Navbar left', () => {
     
 test('Should load correctly', async ({ page }) => {
     await expect(homePage.desktopLogo).toBeVisible();
@@ -40,8 +40,9 @@ test('Shoud go to Tour website', async ({ page, context }) => {
     ]);
     // Wait for Page Load
     await newPage.waitForLoadState();
-    console.log('URL', newPage.url());
-   await (newPage).close();
+    //console.log('URL', newPage.url());
+    expect(newPage.url()).toBe('https://www.taylorswift.com/tour/');
+    await (newPage).close();
 });
 
 test('Shoud go to Tour page', async ({ page }) => {
@@ -69,3 +70,12 @@ test('Shoud go to Film website', async ({ page, context }) => {
 });
 
 });
+
+test.describe('Eras pictures and color schemes', () => {
+
+    test('Should display 1898 era as main picture', async ({ page }) => {
+        await homePage.useColorScheme1989();
+        await expect(homePage.colorScheme1989).toHaveAttribute('style', 'opacity: 1; width: 35%;');
+    })
+    
+})
