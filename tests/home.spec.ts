@@ -73,9 +73,75 @@ test('Shoud go to Film website', async ({ page, context }) => {
 
 test.describe('Eras pictures and color schemes', () => {
 
-    test('Should display 1898 era as main picture', async ({ page }) => {
+    test('Should display Debut era as main picture', async () => {
+        await homePage.useColorSchemeDebut();
+        await expect(homePage.colorSchemeDebut).toHaveAttribute('style', 'opacity: 1; width: 35%;');
+        await expect(homePage.colorScheme1989).toHaveAttribute('style', 'opacity: 1; width: 6.5%;');
+        await expect(homePage.banner).toHaveCSS('background-color','rgb(169, 203, 170)'); 
+    });
+
+    test('Should display Fearless era as main picture', async () => {
+        await homePage.useColorSchemeFearless();
+        await expect(homePage.colorSchemeFearless).toHaveAttribute('style', 'opacity: 1; width: 35%;');
+        await expect(homePage.colorSchemeDebut).toHaveAttribute('style', 'opacity: 1; width: 6.5%;');
+        await expect(homePage.banner).toHaveCSS('background-color','rgb(253, 218, 166)'); 
+    });
+
+    test('Should display Speak Now era as main picture', async () => {
+        await homePage.useColorSchemeSpeakNow();
+        await expect(homePage.colorSchemeSpeakNow).toHaveAttribute('style', 'opacity: 1; width: 35%;');
+        await expect(homePage.colorSchemeFearless).toHaveAttribute('style', 'opacity: 1; width: 6.5%;');
+        await expect(homePage.banner).toHaveCSS('background-color','rgb(214, 186, 220)'); 
+    });
+
+    test('Should display Red era as main picture', async () => {
+        await homePage.useColorSchemeRed();
+        await expect(homePage.colorSchemeRed).toHaveAttribute('style', 'opacity: 1; width: 35%;');
+        await expect(homePage.colorSchemeSpeakNow).toHaveAttribute('style', 'opacity: 1; width: 6.5%;');
+        await expect(homePage.banner).toHaveCSS('background-color','rgb(114, 51, 60)'); 
+    });
+
+    test('Should display 1989 era as main picture', async () => {
         await homePage.useColorScheme1989();
         await expect(homePage.colorScheme1989).toHaveAttribute('style', 'opacity: 1; width: 35%;');
-    })
+        await expect(homePage.colorSchemeRed).toHaveAttribute('style', 'opacity: 1; width: 6.5%;');
+    });
+
+    test('Should display Reputation era as main picture', async () => {
+        await homePage.useColorSchemeReputation();
+        await expect(homePage.colorSchemeReputation).toHaveAttribute('style', 'opacity: 1; width: 35%;');
+        await expect(homePage.colorScheme1989).toHaveAttribute('style', 'opacity: 1; width: 6.5%;');
+    });
+
+    test('Should display Lover era as main picture', async () => {
+        await homePage.useColorSchemeLover();
+        await expect(homePage.colorSchemeLover).toHaveAttribute('style', 'opacity: 1; width: 35%;');
+        await expect(homePage.colorSchemeReputation).toHaveAttribute('style', 'opacity: 1; width: 6.5%;');
+    });
+
+    test('Should display Evermore era as main picture', async () => {
+        await homePage.useColorSchemeEvermore();
+        await expect(homePage.colorSchemeEvermore).toHaveAttribute('style', 'opacity: 1; width: 35%;');
+        await expect(homePage.colorSchemeLover).toHaveAttribute('style', 'opacity: 1; width: 6.5%;');
+    });
+
+    test('Should display Folklore era as main picture', async () => {
+        await homePage.useColorSchemeFolklore();
+        await expect(homePage.colorSchemeFolklore).toHaveAttribute('style', 'opacity: 1; width: 35%;');
+        await expect(homePage.colorSchemeEvermore).toHaveAttribute('style', 'opacity: 1; width: 6.5%;');
+    });
+
+    test('Should display Midnights era as main picture', async () => {
+        await homePage.useColorSchemeMidnights();
+        await expect(homePage.colorSchemeMidnights).toHaveAttribute('style', 'opacity: 1; width: 35%;');
+        await expect(homePage.colorSchemeFolklore).toHaveAttribute('style', 'opacity: 1; width: 6.5%;');
+    });
+
+    test('Should display TTPD era as main picture', async () => {
+        await homePage.useColorSchemeTTPD();
+        await expect(homePage.colorSchemeTTPD).toHaveAttribute('style', 'opacity: 1; width: 35%;');
+        await expect(homePage.colorSchemeMidnights).toHaveAttribute('style', 'opacity: 1; width: 6.5%;');
+    });
+});
     
-})
+
