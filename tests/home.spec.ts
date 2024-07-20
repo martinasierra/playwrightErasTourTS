@@ -12,7 +12,7 @@ let homePage: HomePage; // Create new variable
 test.beforeEach(async ({page}) => {
     homePage = new HomePage(page); //New instance of the homePage variable
     await page.goto(URL);
-})
+});
 
 test.describe('Home Page - Navbar left', () => {
     

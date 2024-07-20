@@ -10,9 +10,10 @@ readonly continueButton: Locator;
 readonly searchSongsInput: Locator;
 readonly createButton: Locator;
 readonly goBackButton: Locator;
+readonly stepTitle: Locator;
 
 
-constructor (page:Page) {
+constructor (page: Page) {
     this.page = page;
     this.playlistHeading = page.getByRole('heading', { name: 'Create a Taylor Swift | The Eras Tour' });
     this.letsGoButton = page.getByRole('button', { name: 'Let\'s Go' });
@@ -21,9 +22,34 @@ constructor (page:Page) {
     this.searchSongsInput = page.getByPlaceholder('Search Songs');
     this.createButton = page.getByRole('button', { name: 'Create' });
     this.goBackButton = page.getByRole('button', { name: 'Go Back' });
+    this.stepTitle =  page.locator('.PlaylistCreator_title__L7q2S > span');
 }
 
-    
+// methods (or functions)
+async clickLetsGoButton(){
+    await this.letsGoButton.click();
+ };
+
+ async fillEnterNameInput(name: string){
+    await this.enterNameInput.fill(name);
+ };
+
+ async clickContinueButton(){
+    await this.continueButton.click();
+ };
+
+ async fillSearchSongsInput(song: string){
+    await this.searchSongsInput.fill(song);
+ };
+
+ async clickCreateButton(){
+    await this.createButton.click();
+ };
+
+ async clickGoBackButton(){
+    await this.goBackButton.click();
+ };
+
 }  
 
 export default PlaylistPage;
