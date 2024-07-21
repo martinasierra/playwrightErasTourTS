@@ -6,13 +6,16 @@ const URL = 'https://tstheerastour.taylorswift.com/';
 let homePage: HomePage;
 let playlistPage: PlaylistPage;
 
-const shuffleAndReturnName = (array: string[]): string => {
-    const shuffledArray = array.sort(() => Math.random() - 0.5);
-    return shuffledArray[Math.floor(Math.random() * shuffledArray.length)];
-  };
+const shuffleAndReturnMultiple = (array: string[], count: number): string[] => {
+  const shuffledArray = array.sort(() => Math.random() - 0.5);
+  return shuffledArray.slice(0, count);
+};
   
   const names = ["Samantha", "Charlotte", "Carrie", "Miranda"]; 
-  const randomName = shuffleAndReturnName(names);
+  const songs = ["Fearless", "Mastermind", "Anti-Hero", "The man", "Miss Americana & The Heartbreak Prince", 
+    "You're On Your Own, Kid", "right where you left me", "The Archer", "this is me trying"];
+  const randomName = shuffleAndReturnMultiple(names,1);
+  const randomSong = shuffleAndReturnMultiple(songs, 5);
 
 test.beforeEach(async ({page}) => {
     homePage = new HomePage(page);
@@ -34,16 +37,22 @@ test('Should create valid playlist', async ({ page }) => {
     });
 
     await test.step('Complete name', async () => {
-        await playlistPage.fillEnterNameInput(randomName);
+        await playlistPage.fillEnterNameInput(randomName[0]);
         await playlistPage.clickContinueButton();
         await expect(playlistPage.stepTitle).toHaveText('Step 2 – Select Songs')
-    })
+    });
+
+    await test.step('Select songs by searching', async () => {
+        
+      for (let i = 0; i <= 4; i++) {
+            await playlistPage.fillSearchSongsInput(randomSong[i]);
+            await playlistPage.firstResult.click();
+            await expect(playlistPage.searchSongsInput).toBeEmpty();
+        };
+    });
     
     
 });
-
-
-
 
 
 })

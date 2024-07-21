@@ -11,6 +11,7 @@ readonly searchSongsInput: Locator;
 readonly createButton: Locator;
 readonly goBackButton: Locator;
 readonly stepTitle: Locator;
+readonly firstResult: Locator;
 
 
 constructor (page: Page) {
@@ -23,6 +24,7 @@ constructor (page: Page) {
     this.createButton = page.getByRole('button', { name: 'Create' });
     this.goBackButton = page.getByRole('button', { name: 'Go Back' });
     this.stepTitle =  page.locator('.PlaylistCreator_title__L7q2S > span');
+    this.firstResult = page.locator('.SearchList_container__9ARmD > button');
 }
 
 // methods (or functions)
