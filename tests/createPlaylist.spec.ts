@@ -43,13 +43,18 @@ test('Should create valid playlist', async ({ page }) => {
     });
 
     await test.step('Select songs by searching', async () => {
-        
       for (let i = 0; i <= 4; i++) {
             await playlistPage.fillSearchSongsInput(randomSong[i]);
-            await playlistPage.firstResult.click();
-            await expect(playlistPage.searchSongsInput).toBeEmpty();
+            await playlistPage.firstResult.click();            
         };
+        await expect(playlistPage.selectedSongsNumber).toHaveText('Selected 5/50');
     });
+
+    await test.step('Click on Continue', async () => {
+      await playlistPage.clickCreateButton();
+      await expect(playlistPage.stepTitle).toHaveText('Step 3 – Save & Share');
+    });
+    
     
     
 });

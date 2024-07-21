@@ -12,6 +12,7 @@ readonly createButton: Locator;
 readonly goBackButton: Locator;
 readonly stepTitle: Locator;
 readonly firstResult: Locator;
+readonly selectedSongsNumber: Locator;
 
 
 constructor (page: Page) {
@@ -25,7 +26,8 @@ constructor (page: Page) {
     this.goBackButton = page.getByRole('button', { name: 'Go Back' });
     this.stepTitle =  page.locator('.PlaylistCreator_title__L7q2S > span');
     this.firstResult = page.locator('.SearchList_container__9ARmD > button');
-}
+    this.selectedSongsNumber = page.locator('.Reorder_selectedCopy__Bq_NM');
+};
 
 // methods (or functions)
 async clickLetsGoButton(){
