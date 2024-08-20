@@ -13,20 +13,24 @@ readonly goBackButton: Locator;
 readonly stepTitle: Locator;
 readonly firstResult: Locator;
 readonly selectedSongsNumber: Locator;
+readonly tryAgainButton: Locator;
+readonly viewAllSongs: Locator;
 
 
 constructor (page: Page) {
-    this.page = page;
-    this.playlistHeading = page.getByRole('heading', { name: 'Create a Taylor Swift | The Eras Tour' });
-    this.letsGoButton = page.getByRole('button', { name: 'Let\'s Go' });
-    this.enterNameInput = page.getByPlaceholder('Enter Your First Name');
-    this.continueButton = page.getByRole('button', { name: 'Continue' });
-    this.searchSongsInput = page.getByPlaceholder('Search Songs');
-    this.createButton = page.getByRole('button', { name: 'Create' });
-    this.goBackButton = page.getByRole('button', { name: 'Go Back' });
-    this.stepTitle =  page.locator('.PlaylistCreator_title__L7q2S > span');
-    this.firstResult = page.locator('.SearchList_container__9ARmD > button');
-    this.selectedSongsNumber = page.locator('.Reorder_selectedCopy__Bq_NM');
+   this.page = page;
+   this.playlistHeading = page.getByRole('heading', { name: 'Create a Taylor Swift | The Eras Tour' });
+   this.letsGoButton = page.getByRole('button', { name: 'Let\'s Go' });
+   this.enterNameInput = page.getByPlaceholder('Enter Your First Name');
+   this.continueButton = page.getByRole('button', { name: 'Continue' });
+   this.searchSongsInput = page.getByPlaceholder('Search Songs');
+   this.createButton = page.getByRole('button', { name: 'Create' });
+   this.goBackButton = page.getByRole('button', { name: 'Go Back' });
+   this.stepTitle =  page.locator('.PlaylistCreator_title__L7q2S > span');
+   this.firstResult = page.locator('.SearchList_container__9ARmD > button');
+   this.selectedSongsNumber = page.locator('.Reorder_selectedCopy__Bq_NM');
+   this.tryAgainButton = page.locator('.PlaylistCreator_secondaryButton__t_LNh');
+   this.viewAllSongs =  page.getByRole('button', { name: 'View all songs' });
 };
 
 // methods (or functions)
@@ -52,6 +56,14 @@ async clickLetsGoButton(){
 
  async clickGoBackButton(){
     await this.goBackButton.click();
+ };
+
+ async clickTryAgainButton(){
+   await this.tryAgainButton.click();
+ };
+
+ async clickViewAllSongs(){
+   await this.viewAllSongs.click();
  };
 
 }  

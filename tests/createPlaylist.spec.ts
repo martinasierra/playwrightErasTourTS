@@ -50,14 +50,37 @@ test('Should create valid playlist', async ({ page }) => {
         await expect(playlistPage.selectedSongsNumber).toHaveText('Selected 5/50');
     });
 
-    await test.step('Click on Continue', async () => {
+    await test.step('Click on Create', async () => {
       await playlistPage.clickCreateButton();
       await expect(playlistPage.stepTitle).toHaveText('Step 3 – Save & Share');
+      await expect(playlistPage.tryAgainButton).toBeVisible();
     });
-    
-    
-    
+
+});
+
+test('Selecting - Should create a valid playlist', async ({ page }) => {
+  
+  await test.step('Go to Playlist section', async () => {
+    await homePage.clickPlaylistButton();
+    await expect(playlistPage.playlistHeading).toBeInViewport();
+});
+
+await test.step('Click on Lets go button', async () => {
+    await playlistPage.clickLetsGoButton();
+    await expect(playlistPage.stepTitle).toHaveText('Step 1 – Your Info');
+});
+
+await test.step('Complete name', async () => {
+    await playlistPage.fillEnterNameInput(randomName[0]);
+    await playlistPage.clickContinueButton();
+    await expect(playlistPage.stepTitle).toHaveText('Step 2 – Select Songs')
+});
+
+await test.step('Select songs by selecting', async () => { 
+    await playlistPage.clickViewAllSongs(); 
 });
 
 
-})
+});
+
+});
