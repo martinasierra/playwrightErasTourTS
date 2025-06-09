@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:e2e:example": "npx playwright test tests example2.spec.ts"
+    "test:e2e:example": "npx playwright test tests example2.spec.ts",
+    "test:e2e:all": "npx playwright test tests --project=all-browsers-and-tests", 
+    "test-home": "npx playwright test tests home.spec.ts"
   },
   "keywords": [],
   "author": "",

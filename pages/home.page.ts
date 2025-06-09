@@ -41,7 +41,7 @@ constructor (page:Page) {
     this.tourButton = page.getByRole('button', { name: 'Tour' });
     this.playlistButton = page.getByRole('button', { name: 'Playlist' });
     this.filmButton = page.getByRole('button', { name: 'Film' });
-    this.colorSchemeDebut = page.getByLabel('Use Debut color scheme');
+    this.colorSchemeDebut = page.getByRole('button', {name: 'Use Debut color scheme'});
     this.colorSchemeFearless = page.getByLabel('Use Fearless color scheme');
     this.colorSchemeSpeakNow = page.getByLabel('Use Speak Now color scheme');
     this.colorSchemeRed = page.getByLabel('Use Red color scheme');
