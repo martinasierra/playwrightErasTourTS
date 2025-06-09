@@ -19,7 +19,7 @@ readonly viewAllSongs: Locator;
 
 constructor (page: Page) {
    this.page = page;
-   this.playlistHeading = page.getByRole('heading', { name: 'Create a Taylor Swift | The Eras Tour' });
+   this.playlistHeading = page.getByRole('heading', { name: 'Taylor Swift | The Eras Tour Official Setlist Playlists' });
    this.letsGoButton = page.getByRole('button', { name: 'Let\'s Go' });
    this.enterNameInput = page.getByPlaceholder('Enter Your First Name');
    this.continueButton = page.getByRole('button', { name: 'Continue' });

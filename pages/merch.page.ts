@@ -9,7 +9,7 @@ readonly merchHeading: Locator;
 // constructor
 constructor (page:Page) {
     this.page = page;
-    this.merchHeading = page.getByRole('heading', { name: 'Taylor Swift | The Eras Tour' });
+    this.merchHeading = page.getByRole('heading', { name: 'Taylor Swift | The Eras Tour Collection'});
 
 }
 
