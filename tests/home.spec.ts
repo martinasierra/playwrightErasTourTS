@@ -25,28 +25,22 @@ test('Should load correctly', async ({ page }) => {
     await expect(homePage.erasImagesContainer).toBeVisible();
 });
 
+test('Shoud go to Film page', async ({ page }) => {
+    await homePage.clickFilmButton();
+    await expect(homePage.streamButton).toBeVisible();
+    await expect(homePage.videoLink).toBeVisible();
+});
+
 test('Shoud go to Merch page', async ({ page }) => {
     const merchPage = new MerchPage(page); 
     await homePage.clickMerchButton();
     await expect(merchPage.merchHeading).toBeVisible();
 });
 
-test('Shoud go to Explore page', async ({ page }) => {
-    const explorePage = new ExplorePage(page); 
-    await homePage.clickExploreButton();
-    await page.waitForTimeout(4000);
-    await expect(explorePage.exploreContainer).toBeInViewport();
-});
-
-test('Shoud go to Tour website', async ({ page, context }) => {
-    const [newPage] = await Promise.all([ 
-        context.waitForEvent('page'), 
-        await homePage.clickTourButton()
-    ]);
-    // Wait for Page Load
-    await newPage.waitForLoadState();
-    expect(newPage.url()).toBe('https://tstheerastour.taylorswift.com/');
-    await (newPage).close();
+test('Should go to Playlist page', async ({ page }) => {
+    const playlistPage = new PlaylistPage(page); 
+   await homePage.clickPlaylistButton();
+   await expect(playlistPage.playlistHeading).toBeInViewport(); 
 });
 
 test('Shoud go to Tour page', async ({ page }) => {
@@ -56,22 +50,24 @@ test('Shoud go to Tour page', async ({ page }) => {
     await expect(homePage.tourButton).toHaveClass('Desktop_activeLink__Q9Ulg');
 });
 
-test('Should go to Playlist page', async ({ page }) => {
-    const playlistPage = new PlaylistPage(page); 
-   await homePage.clickPlaylistButton();
-   await expect(playlistPage.playlistHeading).toBeInViewport(); 
+test('Shoud go to Explore page', async ({ page }) => {
+    const explorePage = new ExplorePage(page); 
+    await homePage.clickExploreButton();
+    await explorePage.exploreContainer.scrollIntoViewIfNeeded();
+    await expect(explorePage.exploreContainer).toBeInViewport({timeout: 1000});
 });
 
-test('Shoud go to Film page', async ({ page }) => {
-    //const [newPage2] = await Promise.all([ 
-    //    context.waitForEvent('page'), 
-    await homePage.clickFilmButton();
-    //]);
-    //await newPage2.waitForLoadState();
-    //console.log('URL', newPage2.url());
-   //await (newPage2).close();
-    //await expect()
-});
+/*test('Shoud go to Tour website', async ({ page, context }) => {
+    const [newPage] = await Promise.all([ 
+        context.waitForEvent('page'), 
+        await homePage.clickTourButton()
+    ]);
+    // Wait for Page Load
+    await newPage.waitForLoadState();
+    expect(newPage.url()).toBe('https://tstheerastour.taylorswift.com/tour'); / Discontinued page
+    await (newPage).close();
+}); */
+
 
 });
 

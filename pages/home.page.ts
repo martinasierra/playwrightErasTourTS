@@ -18,6 +18,8 @@ readonly exploreButton: Locator;
 readonly tourButton: Locator;
 readonly playlistButton: Locator;
 readonly filmButton: Locator;
+readonly streamButton: Locator;
+readonly videoLink: Locator;
 readonly colorSchemeDebut: Locator;
 readonly colorSchemeFearless: Locator;
 readonly colorSchemeSpeakNow: Locator;
@@ -41,6 +43,8 @@ constructor (page:Page) {
     this.tourButton = page.getByRole('button', { name: 'Tour' });
     this.playlistButton = page.getByRole('button', { name: 'Playlist' });
     this.filmButton = page.getByRole('button', { name: 'Film' });
+    this.streamButton = page.getByRole('button', { name: 'Stream on Disney+ Now' });
+    this.videoLink = page.locator('iframe[src*="https://www.youtube.com/embed/5UBl0rLEl0w?autoplay=0"]')
     this.colorSchemeDebut = page.getByRole('button', {name: 'Use Debut color scheme'});
     this.colorSchemeFearless = page.getByLabel('Use Fearless color scheme');
     this.colorSchemeSpeakNow = page.getByLabel('Use Speak Now color scheme');
